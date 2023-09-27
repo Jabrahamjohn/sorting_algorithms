@@ -1,30 +1,8 @@
-# 0x1B. C - Sorting algorithms & Big O
-![image](https://user-images.githubusercontent.com/110098940/231886512-cddd2e4d-5921-4a47-9553-0fb97b9c1747.png)
-## Resources:books:
-Read or watch:
-* [Big-O Algorithm Complexity Cheat](https://www.bigocheatsheet.com/)
-* [Big O Notation - Ruby Reilly](https://medium.com/@rubyclaroreilly/big-o-notation-f2c0d0e60888)
-* [Big O Notation: A primer for beginning devs](https://www.educative.io/blog/a-big-o-primer-for-beginning-devs?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=blog-dynamic&gclid=EAIaIQobChMIlb2ol-H36QIVTwiICR38HQ-LEAAYASAAEgJjGPD_BwE%3E)
-* [Complete Beginner's Guide to Big O Notation](https://www.youtube.com/watch?v=kS_gr2_-ws8)
-* [Data Structures - Asymptotic Analysis](https://www.tutorialspoint.com/data_structures_algorithms/asymptotic_analysis.htm)
-* [RANDOM.ORG - Integer Set Generator](https://www.random.org/integer-sets/)
-* [Sorting algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm#Classification)
-* [algorithm - What is a plain English explanation of "Big O" notation?](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation)
-* [What is the time complexity of indexing, inserting and removing from common data structures?](https://stackoverflow.com/questions/122799/what-is-the-time-complexity-of-indexing-inserting-and-removing-from-common-data)
-* [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
-* [Sorting Algorithms BigPicture](https://www.youtube.com/watch?v=RLuBLU_NgaA)
-* [algoritmos de ordenamiento](https://www.youtube.com/results?search_query=algoritmos+de+ordenamiento)
-* [ALGORITMOS - METODOS DE ORDENAMIENTO](https://www.youtube.com/watch?v=VJ_EUuURRg4)
-* [¿Qué es la complejidad algorítmica y con qué se come?](https://medium.com/@joseguillermo_/qu%C3%A9-es-la-complejidad-algor%C3%ADtmica-y-con-qu%C3%A9-se-come-2638e7fd9e8c)
-* [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation)
-* [Análisis de la complejidad de los algoritmos](https://www.cs.us.es/~jalonso/cursos/i1m/temas/tema-28.html)
-* [Rendimiento de algoritmos y notación Big-O](https://www.campusmvp.es/recursos/post/Rendimiento-de-algoritmos-y-notacion-Big-O.aspx)
-* [Big-O is easy to calculate, if you know how](https://justin.abrah.ms/computer-science/how-to-calculate-big-o.html)
-* [8 time complexities that every programmer should know](https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/#Binary-search)
+<h1 class="gap">0x1B. C - Sorting algorithms &amp; Big O</h1>
 
+<p><img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/248/willy-wonka.png"><br>
+<br></p>
 
-
----
 ## Learning Objectives:bulb:
 What you should learn from this project:
 
@@ -33,7 +11,16 @@ What you should learn from this project:
 * How to select the best sorting algorithm for a given input
 * What is a stable sorting algorithm
 
----
+# RESOURCES
+### Read or Watch
+<ul>
+<li><a href="/rltoken/-j5MKLBlzZAC2RfJ5DTBIg" title="Sorting algorithm" target="_blank">Sorting algorithm</a> </li>
+<li><a href="/rltoken/WRvrE2BaNVQFssHiUATTrw" title="Big O notation" target="_blank">Big O notation</a> </li>
+<li><a href="/rltoken/ol0P7NbYVb5R31iOv4Q40A" title="Sorting algorithms animations" target="_blank">Sorting algorithms animations</a> </li>
+<li><a href="/rltoken/_I0aEvhfJ66Xyob6dd9Utw" title="15 sorting algorithms in 6 minutes" target="_blank">15 sorting algorithms in 6 minutes</a> (<em><b>WARNING</b>: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms</em>)</li>
+<li><a href="/rltoken/Ea93HeEYuNkOL7sGb6zzGg" title="CS50 Algorithms explanation in detail by David Malan" target="_blank">CS50 Algorithms explanation in detail by David Malan</a></li>
+<li><a href="/rltoken/21X_eaj5RGcLIL9mZv2sqw" title="All about sorting algorithms" target="_blank">All about sorting algorithms</a></li>
+</ul>
 
 ### [0. Bubble sort](./0-bubble_sort.c)
 * Write a function that sorts an array of integers in ascending order using the Bubble sort algorithm
@@ -88,11 +75,99 @@ What you should learn from this project:
 
 ---
 
+## MORE INFO
+### Data structures and functions
+<ul>
+<li>For this project you are given the following <code>print_array</code>, and <code>print_list</code> functions:</li>
+</ul>
+<pre><code>#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+/**
+ * print_array - Prints an array of integers
+ *
+ * @array: The array to be printed
+ * @size: Number of elements in @array
+ */
+void print_array(const int *array, size_t size)
+{
+    size_t i;
+
+    i = 0;
+    while (array &amp;&amp; i &lt; size)
+    {
+        if (i &gt; 0)
+            printf(", ");
+        printf("%d", array[i]);
+        ++i;
+    }
+    printf("\n");
+}
+</code></pre>
+<pre><code>#include &lt;stdio.h&gt;
+#include "sort.h"
+
+/**
+ * print_list - Prints a list of integers
+ *
+ * @list: The list to be printed
+ */
+void print_list(const listint_t *list)
+{
+    int i;
+
+    i = 0;
+    while (list)
+    {
+        if (i &gt; 0)
+            printf(", ");
+        printf("%d", list-&gt;n);
+        ++i;
+        list = list-&gt;next;
+    }
+    printf("\n");
+}
+</code></pre>
+<ul>
+<li>Our files <code>print_array.c</code> and <code>print_list.c</code> (containing the <code>print_array</code> and <code>print_list</code> functions) will be compiled with your functions during the correction.</li>
+<li>Please declare the prototype of the functions <code>print_array</code> and <code>print_list</code> in your <code>sort.h</code> header file</li>
+<li>Please use the following data structure for doubly linked list:</li>
+</ul>
+<pre><code>/**
+ * struct listint_s - Doubly linked list node
+ *
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
+ */
+typedef struct listint_s
+{
+    const int n;
+    struct listint_s *prev;
+    struct listint_s *next;
+} listint_t;
+</code></pre>
+<p>Please, note this format is used for Quiz and Task questions.</p>
+<ul>
+<li><code>O(1)</code></li>
+<li><code>O(n)</code></li>
+<li><code>O(n!)</code></li>
+<li>n square -&gt; <code>O(n^2)</code></li>
+<li>log(n) -&gt; <code>O(log(n))</code></li>
+<li>n * log(n) -&gt; <code>O(nlog(n))</code></li>
+<li>n + k -&gt; <code>O(n+k)</code></li>
+<li>…</li>
+</ul>
+<p>Please use the “short” notation (don’t use constants). Example: <code>O(nk)</code> or <code>O(wn)</code> should be written <code>O(n)</code>.
+If an answer is required within a file, all your answers files must have a newline at the end.</p>
+<h3>Tests</h3>
+<p>Here is a quick tip to help you test your sorting algorithms with big sets of random integers: <a href="/rltoken/YR-VWQbICB59wZs1eAaI3w" title="Random.org" target="_blank">Random.org</a></p>
+
 ## Author:
-* **KARLIE MOYO**
- - [GitHub](https://github.com/Karlie-crypto)
- - [Twitter](https://twitter.com/karlieemoyo)
+**Abraham john**
+ - [GitHub](https://github.com/Jabrahamjohn)
+ - [Twitter](https://twitter.com/Jabrahamjohns)
 
 
    COLLABORATION:
-   [Cellphone](+27844775229)
+   [Cellphone](+254758238617)
